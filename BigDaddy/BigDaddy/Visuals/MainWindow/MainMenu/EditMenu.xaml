@@ -1,0 +1,17 @@
+﻿<MenuItem x:Class="BigDaddy.EditMenu"
+          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+          xmlns:core="clr-namespace:BigDaddy.Core;assembly=BigDaddy.Core"
+          mc:Ignorable="d"
+          Header="{Binding Name}"
+          d:DataContext="{d:DesignInstance Type=core:EditMenuDesignModel, IsDesignTimeCreatable=True}">
+    <MenuItem Header="{Binding AddColumnsName}" Command="{Binding AddColumnsCommand}"/>
+    <MenuItem Header="{Binding DuplicateColumnsName}" Command="{Binding DuplicateColumnsCommand}"/>
+    <MenuItem Header="{Binding RemoveColumnsName}" Command="{Binding RemoveColumnsCommand}"/>
+    <Separator/>
+    <MenuItem Header="{Binding CopyColumnsName}" Command="{Binding CopyColumnsCommand}"/>
+    <MenuItem Header="{Binding CutColumnsName}" Command="{Binding CutColumnsCommand}"/>
+    <MenuItem Header="{Binding PasteColumnsName}" Command="{Binding PasteColumnsCommand}"/>
+</MenuItem>

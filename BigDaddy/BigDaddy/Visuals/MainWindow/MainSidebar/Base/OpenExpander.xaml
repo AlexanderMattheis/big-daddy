@@ -1,0 +1,89 @@
+﻿<Expander x:Class="BigDaddy.OpenExpander"
+          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+          xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+          xmlns:local="clr-namespace:BigDaddy"
+          xmlns:core="clr-namespace:BigDaddy.Core;assembly=BigDaddy.Core"
+          mc:Ignorable="d"
+          Header="{Binding Name}"
+          IsExpanded="True"
+          d:DataContext="{d:DesignInstance Type=core:OpenExpanderDesignModel, IsDesignTimeCreatable=True}">
+    
+    <StackPanel>
+        <DockPanel>
+            <Label Width="80" Content="{Binding LowerBoundName}"/>
+            <TextBox x:Name="LowerBoundTextBox" Margin="5" >
+                <TextBox.Text>
+                    <Binding Path="LowerBoundValue" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <local:MinRule Min="1"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+        </DockPanel>
+
+        <DockPanel>
+            <Label Width="80" Content="{Binding UpperBoundName}"/>
+            <TextBox x:Name="UpperBoundTextBox" Margin="5">
+                <TextBox.Text>
+                    <Binding Path="UpperBoundValue" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <local:MinRule Min="1"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+        </DockPanel>
+
+        <DockPanel>
+            <Label Width="80" Content="{Binding SeparatorName}"/>
+            <TextBox Margin="5" Text="{Binding SeparatorValue}"/>
+        </DockPanel>
+
+        <CheckBox Margin="5" IsChecked="{Binding DetermineTotalNumberOfLinesValue}">
+            <TextBlock TextWrapping="Wrap" Text="{Binding DetermineTotalNumberOfLinesName}" />
+        </CheckBox>
+
+        <Button x:Name="ReimportButton" Margin="5" Content="{Binding ReimportName}" Click="ReimportButton_Click" ToolTipService.ShowOnDisabled="True">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="ToolTip" Value="{Binding ValidationErrorTooltip}"/>
+                    <Setter Property="IsEnabled" Value="False"/>
+                    <Style.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding Path=(Validation.HasError), ElementName=LowerBoundTextBox}" Value="False"/>
+                                <Condition Binding="{Binding LastLoadedFileName, Converter={local:ObjectExistenceConverter}}" Value="True"/>
+                                <Condition Binding="{Binding Path=(Validation.HasError), ElementName=UpperBoundTextBox}" Value="False"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="IsEnabled" Value="True"/>
+                            <Setter Property="ToolTip" Value="{x:Null}"/>
+                        </MultiDataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <local:LoadingButton Margin="5" Content="{Binding ImportName}" Click="ImportButton_Click" ToolTipService.ShowOnDisabled="True">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="ToolTip" Value="{Binding ValidationErrorTooltip}"/>
+                    <Setter Property="IsEnabled" Value="False"/>
+                    <Style.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding Path=(Validation.HasError), ElementName=LowerBoundTextBox}" Value="False"/>
+                                <Condition Binding="{Binding Path=(Validation.HasError), ElementName=UpperBoundTextBox}" Value="False"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="IsEnabled" Value="True"/>
+                            <Setter Property="ToolTip" Value="{x:Null}"/>
+                        </MultiDataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </local:LoadingButton>
+    </StackPanel>
+
+</Expander>

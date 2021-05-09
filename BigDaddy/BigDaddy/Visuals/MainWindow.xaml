@@ -1,0 +1,33 @@
+﻿<Window x:Class="BigDaddy.MainWindow"
+        x:Name="InitialWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BigDaddy"
+        xmlns:core="clr-namespace:BigDaddy.Core;assembly=BigDaddy.Core"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=core:MainWindowDesignModel, IsDesignTimeCreatable=True}"
+        Title="MainWindow">
+    
+    <DockPanel IsEnabled="{Binding IsLoading, Converter={local:BooleanToNegatedBooleanConverter}}">
+        <local:MainMenu DockPanel.Dock="Top"/>
+        <local:MainTabControl DockPanel.Dock="Top"/>
+        <local:MainStatusBar DockPanel.Dock="Bottom"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="165" Width="175" MaxWidth="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Window}, Converter={local:SubtractionConverter}, ConverterParameter=185}" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <local:MainSidebar Grid.Column="0"/>
+
+            <GridSplitter Grid.Column="1" Grid.RowSpan="2" Width="3" HorizontalAlignment="Center" ShowsPreview="True" />
+
+            <local:MainDataGrid Grid.Column="2"/>
+            
+        </Grid>
+
+    </DockPanel>
+</Window>

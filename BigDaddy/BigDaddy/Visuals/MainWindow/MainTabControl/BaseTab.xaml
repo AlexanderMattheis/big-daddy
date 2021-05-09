@@ -1,0 +1,20 @@
+﻿<TabItem x:Class="BigDaddy.BaseTab"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+         xmlns:local="clr-namespace:BigDaddy"  
+         xmlns:core="clr-namespace:BigDaddy.Core;assembly=BigDaddy.Core"       
+         mc:Ignorable="d"
+         Header="{Binding Name}"
+         HorizontalAlignment="Right" 
+         Width="40"
+         d:DataContext="{d:DesignInstance Type=core:BaseTabDesignModel, IsDesignTimeCreatable=True}">
+    <StackPanel Orientation="Horizontal">
+        <Button x:Name="NewButton" ContentTemplate="{Binding NewKey, Converter={local:NameToVectorGraphicConverter}}" Width="75" Height="52" HorizontalAlignment="Left" Margin="5" IsEnabled="False" Click="NewButton_Click"/>
+        <Button x:Name="OpenButton" ContentTemplate="{Binding OpenKey, Converter={local:NameToVectorGraphicConverter}}" Width="75" Height="52" HorizontalAlignment="Left" Margin="5" Click="OpenButton_Click"/>
+        <Button x:Name="SaveButton" ContentTemplate="{Binding SaveKey, Converter={local:NameToVectorGraphicConverter}}" Width="75" Height="52" HorizontalAlignment="Left" Margin="5" IsEnabled="False" Click="SaveButton_Click"/>
+        <Button x:Name="SaveAsButton" ContentTemplate="{Binding SaveAsKey, Converter={local:NameToVectorGraphicConverter}}" Width="75" Height="52" HorizontalAlignment="Left" Margin="5" IsEnabled="False" Click="SaveAsButton_Click"/>
+        <Button x:Name="ExitButton" ContentTemplate="{Binding ExitKey, Converter={local:NameToVectorGraphicConverter}}" Width="75" Height="52" HorizontalAlignment="Left" Margin="5" IsEnabled="False" Click="ExitButton_Click"/>
+    </StackPanel>
+</TabItem>

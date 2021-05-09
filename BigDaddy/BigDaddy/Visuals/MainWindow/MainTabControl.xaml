@@ -1,0 +1,11 @@
+﻿<TabControl x:Class="BigDaddy.MainTabControl"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:local="clr-namespace:BigDaddy"     
+            Height="100"
+            mc:Ignorable="d">
+    <local:BaseTab/>
+    <local:EditTab/>
+</TabControl>

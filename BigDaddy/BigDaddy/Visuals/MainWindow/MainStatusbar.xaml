@@ -1,0 +1,40 @@
+﻿<StatusBar x:Class="BigDaddy.MainStatusBar"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:local="clr-namespace:BigDaddy"   
+           xmlns:core="clr-namespace:BigDaddy.Core;assembly=BigDaddy.Core"   
+           mc:Ignorable="d"
+           d:DataContext="{d:DesignInstance Type=core:MainStatusBarDesignModel, IsDesignTimeCreatable=True}">
+    
+    <StatusBar.ItemsPanel>
+        <ItemsPanelTemplate>
+            <DockPanel LastChildFill="False" />
+        </ItemsPanelTemplate>
+    </StatusBar.ItemsPanel>
+
+    <StatusBarItem>
+        <Label Content="{Binding LinesName}" />
+    </StatusBarItem>
+    
+    <StatusBarItem>
+        <TextBlock Text="{Binding LinesValue, Converter={local:NumberToExtendedFormattedNumberConverter}}"/>
+    </StatusBarItem>
+
+    <StatusBarItem>
+        <TextBlock Text="/"/>
+    </StatusBarItem>
+
+    <StatusBarItem>
+        <TextBlock Text="{Binding TotalLinesValue, Converter={local:NumberToExtendedFormattedNumberConverter}}"/>
+    </StatusBarItem>
+
+    <StatusBarItem DockPanel.Dock="Right" Margin="5">
+        <TextBlock Text="{Binding ProgressBarStatus, Converter={local:LoadingStatusToStringConverter}}" TextAlignment="Center" Width="60"/>
+    </StatusBarItem>
+    
+    <StatusBarItem DockPanel.Dock="Right">
+        <ProgressBar Value="{Binding ProgressBarValue}" IsIndeterminate="{Binding IsWorking}"  Minimum="0" Maximum="100" Height="13" Width="165" Margin="5"/>
+    </StatusBarItem>
+</StatusBar>

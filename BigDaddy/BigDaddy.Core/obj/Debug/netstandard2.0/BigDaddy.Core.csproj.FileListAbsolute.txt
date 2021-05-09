@@ -1,0 +1,14 @@
+B:\Repositories\big-daddy-2\BigDaddy\BigDaddy.Core\bin\Debug\netstandard2.0\Strings.resx
+B:\Repositories\big-daddy-2\BigDaddy\BigDaddy.Core\bin\Debug\netstandard2.0\BigDaddy.Core.dll.config
+B:\Repositories\big-daddy-2\BigDaddy\BigDaddy.Core\bin\Debug\netstandard2.0\BigDaddy.Core.deps.json
+B:\Repositories\big-daddy-2\BigDaddy\BigDaddy.Core\bin\Debug\netstandard2.0\BigDaddy.Core.dll
+B:\Repositories\big-daddy-2\BigDaddy\BigDaddy.Core\bin\Debug\netstandard2.0\BigDaddy.Core.pdb
+B:\Repositories\big-daddy-2\BigDaddy\BigDaddy.Core\obj\Debug\netstandard2.0\BigDaddy.Core.csprojAssemblyReference.cache
+B:\Repositories\big-daddy-2\BigDaddy\BigDaddy.Core\obj\Debug\netstandard2.0\BigDaddy.Core.Strings.resources
+B:\Repositories\big-daddy-2\BigDaddy\BigDaddy.Core\obj\Debug\netstandard2.0\BigDaddy.Core.csproj.GenerateResource.cache
+B:\Repositories\big-daddy-2\BigDaddy\BigDaddy.Core\obj\Debug\netstandard2.0\BigDaddy.Core.csproj.CoreCompileInputs.cache
+B:\Repositories\big-daddy-2\BigDaddy\BigDaddy.Core\obj\Debug\netstandard2.0\BigDaddy.Core.AssemblyInfoInputs.cache
+B:\Repositories\big-daddy-2\BigDaddy\BigDaddy.Core\obj\Debug\netstandard2.0\BigDaddy.Core.AssemblyInfo.cs
+B:\Repositories\big-daddy-2\BigDaddy\BigDaddy.Core\obj\Debug\netstandard2.0\BigDaddy.Core.csproj.Fody.CopyLocal.cache
+B:\Repositories\big-daddy-2\BigDaddy\BigDaddy.Core\obj\Debug\netstandard2.0\BigDaddy.Core.dll
+B:\Repositories\big-daddy-2\BigDaddy\BigDaddy.Core\obj\Debug\netstandard2.0\BigDaddy.Core.pdb
